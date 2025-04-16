@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Карта — ул. Димитрова 77, Воронеж</title>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <style>
+        #map {
+            width: 100%;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Наше местоположение: Воронеж, ул. Димитрова, 77</h2>
+    <div id="map"></div>
+
+    <script>
+        ymaps.ready(function () {
+            var myMap = new ymaps.Map("map", {
+                center: [51.672226, 39.258139], // Координаты ул. Димитрова 77, Воронеж
+                zoom: 16
+            });
+
+            var myPlacemark = new ymaps.Placemark([51.672226, 39.258139], {
+                hintContent: 'ул. Димитрова, 77',
+                balloonContent: 'Воронеж, ул. Димитрова, 77'
+            });
+
+            myMap.geoObjects.add(myPlacemark);
+        });
+    </script>
+</body>
+</html>
